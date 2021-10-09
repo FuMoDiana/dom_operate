@@ -124,18 +124,18 @@ window.dom = {
         return Array.from(node.parentNode.children).filter(n => n !== node);
     },
     next(node) {
-        let x = node.nextSibling;
-        while (x && x.nodeType === 3) { //x为文本
-            x = x.nextSibling;
+        let nextNode = node.nextSibling;
+        while (nextNode && nextNode.nodeType === 3) { //x为文本
+            nextNode = nextNode.nextSibling;
         }
-        return x;
+        return nextNode;
     },
     previous(node) {
-        let x = node.previousSibling;
-        while (x && x.nodeType === 3) { //x为文本
-            x = x.previousSibling;
+        let previousNode = node.previousSibling;
+        while (previoueNode && previoueNode.nodeType === 3) { //x为文本
+            previousNode = previousNode.previousSibling;
         }
-        return x;
+        return previousNode;
     },
     each(nodeList, fn) {
         for (let i = 0; i < nodeList.length; i++) {
